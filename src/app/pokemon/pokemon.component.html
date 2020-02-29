@@ -1,0 +1,13 @@
+<button (click)='getAllPokemon()'>Get Pokemon</button>
+
+<button (click)="handleBack()">Back</button>
+
+<button (click)="handleForward()">Foward</button>
+
+<ul>
+    <li *ngFor="let pokemon of list">
+        <p>{{ pokemon.name }} <button (click)="getPokemonDetail(pokemon.url)">Get Details</button>
+        </p>
+    </li>
+</ul>
+<p style="color: red">{{ errorMessage }}</p>

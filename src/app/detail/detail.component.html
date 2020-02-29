@@ -1,0 +1,63 @@
+<button (click)="handleBack()">Back</button>
+
+
+<h1>#{{pokemon.id}} {{ pokemon.name }}</h1>
+<img src="{{ pokemon.sprites.front_default }}" height="200px"/>
+<img src="{{ pokemon.sprites.back_default }}" height="200px"/>
+<img src="{{ pokemon.sprites.front_shiny }}" height="200px"/>
+<img src="{{ pokemon.sprites.back_shiny }}" height="200px"/>
+<img src="{{ pokemon.sprites.front_female }}" height="200px"/>
+<img src="{{ pokemon.sprites.back_female }}" height="200px"/>
+<img src="{{ pokemon.sprites.front_female_shiny }}" height="200px"/>
+<img src="{{ pokemon.sprites.back_female_shiny }}" height="200px"/>
+
+<ul>
+    <li>Experience for Defeating this Pokemon: {{pokemon.base_experience}}</li>
+    <li>Height: {{ pokemon.height }}</li>
+    <li>Weight: {{pokemon.weight}}</li>
+    <li>Set for exactly one Pokémon used as the default for each species: {{pokemon.is_default}}</li>
+    <li>{{pokemon.order}}</li>
+    <!-- <li>{{pokemon.min_level}}</li> -->
+    <!-- <li>{{pokemon.held_items}}</li> -->
+</ul>
+
+<h2>Ability</h2>
+<ul>
+    <li *ngFor="let item of pokemon.abilities">{{ item.ability.name }} Hidden? {{ item.is_hidden }}</li>
+    <!-- <li *ngFor="let item of pokemon.abilities">{{ item.is_hidden.boolean }}</li> -->
+   
+</ul>
+
+<h2>Held Items</h2>
+<ul>
+    <li *ngFor="let item of pokemon.held_items">{{ item.item.name }}</li>
+    <li *ngFor="let item of pokemon.held_items">{{ item.location_area_encounters }}</li>
+    <li *ngFor="let item of pokemon.held_items">{{ item.version_details.version}}</li>
+
+</ul>
+
+<!-- <h2>Moves</h2>
+<ul>
+    <li *ngFor="let item of pokemon.moves">{{ item.move.name }}</li>
+</ul> -->
+<!-- 
+<h2>Forms:</h2>
+<ul>
+    <li *ngFor="let item of pokemon.forms">{{ item.name }}</li>
+</ul> -->
+
+<h2>Type</h2>
+<ul>
+    <li *ngFor="let item of pokemon.types">{{ item.type.name }}</li>
+</ul>
+
+<h2>Stats</h2>
+<ul>
+    <li *ngFor="let item of pokemon.stats">{{ item.stat.name }} {{ item.base_stat }}</li>
+</ul>
+
+<h2>Game Apperences</h2>
+<ul>
+    <li *ngFor="let item of pokemon.game_indices"> PokeDex #{{item.game_index }}   
+        Pokemon {{ item.version.name }}</li>
+</ul>
